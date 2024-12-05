@@ -1,0 +1,171 @@
+/* Define custom properties (CSS variables) */
+:root {
+    --primary-color: #227f96;
+    --secondary-color: #adcf8c;
+    --accent-color: #772d8b;
+    --background-color: #f4f4f4;
+    --header-font: "Play", serif;
+    --body-font: "Noto Sans", sans-serif;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: #333;
+    background-color: var(--background-color);
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo img {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2, h3, h4 {
+    font-family: "Play", serif;;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+/* Site Purpose Section */
+#site-purpose {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#site-purpose h2 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+}
+
+#site-purpose p {
+    font-size: 1.2em;
+}
+
+/* Scenarios Section */
+#scenarios {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#scenarios h2 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+}
+
+#scenarios ul {
+    list-style-type: none;
+}
+
+#scenarios li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Color Schema Section */
+#color-schema {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#color-schema h2 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+}
+
+#color-schema p {
+    font-size: 1.2em;
+}
+
+/* Color Square Style */
+.color-square {
+    width: 50px; /* Size of the square */
+    height: 50px;
+    margin-top: 10px;
+    display: inline-block;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Typography Section */
+#typography {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#typography h2 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+}
+
+#typography p {
+    font-size: 1.2em;
+}
+
+/* Wireframe Section */
+#wireframe {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#wireframe h2 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+}
+
+.wireframe-section {
+    margin-bottom: 40px;
+}
+
+.wireframe-section h3 {
+    color: black;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+.wireframe-section p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.wireframe-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
