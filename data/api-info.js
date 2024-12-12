@@ -1,6 +1,6 @@
 const key = "2d44f7929c694e258273a05231317948";
 
-const weatherURL = `https://api.rawg.io/api/games?key=${key}`
+const rawgURL = `https://api.rawg.io/api/games?key=${key}`
 
 async function apiFetch(url) {
     try {

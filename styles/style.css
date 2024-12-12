@@ -1,0 +1,196 @@
+/* Define custom properties (CSS variables) */
+:root {
+    --primary-color: #227f96;
+    --secondary-color: #adcf8c;
+    --accent-color: #772d8b;
+    --background-color: #f4f4f4;
+    --header-font: "Play", serif;
+    --body-font: "Noto Sans", sans-serif;
+}
+
+* {
+    font-family: "Noto Sans", sans-serif;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative; /* To position the centered h1 correctly */
+}
+
+/* Logo */
+header img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* Center GameScope Title */
+header h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--header-font);
+    font-size: 1.8rem;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--secondary-color);
+    color: black;
+}
+
+nav a.active {
+    background-color: var(--secondary-color);
+    color: black;
+}
+
+/* Responsive Navigation - Hamburger Menu */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+}
+
+nav.responsive {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+nav.responsive a {
+    padding: 10px 20px;
+    text-align: left;
+}
+
+/* Footer Styling */
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+}
+
+/* Footer Left */
+#footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* Footer Social */
+#footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    flex-grow: 1;
+    margin: 10px;
+}
+
+#footer-social a {
+    display: inline-block;
+}
+
+#footer-social img {
+    width: 70px; /* Size of social icons */
+    height: auto;
+}
+
+/* Hover Animation */
+#footer-social img:hover {
+    transform: scale(1.2);  /* Slightly increase size */
+    opacity: 0.8;  /* Add a little transparency */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Footer Right */
+#footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+/* Footer Links */
+#footer-right a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+#footer-right a:hover {
+    color: var(--secondary-color);
+}
+
+/* Media Query */
+@media (max-width: 768px) {
+    nav {
+        display: none; /* Hide the navigation */
+    }
+
+    nav.responsive {
+        display: flex; /* Show dropdown when active */
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    header h1 {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #footer-left,
+    #footer-right {
+        align-items: center;
+        text-align: center;
+    }
+
+    #footer-social {
+        justify-content: center;
+        gap: 20px;
+    }
+}

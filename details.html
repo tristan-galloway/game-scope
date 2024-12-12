@@ -7,7 +7,6 @@
     <title>GamingScope | Home</title>
     <link rel="stylesheet" href="../styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Play:wght@400;700&display=swap" rel="stylesheet">
@@ -16,7 +15,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
     <link rel="manifest" href="../images/site.webmanifest">
     <script src="scripts/main.js" defer></script>
-    <script src="scripts/home.js" defer></script>
 </head>
 <body>
     <header>
@@ -28,25 +26,13 @@
             <div></div>
         </div>
         <nav>
-            <a class="active" href="index.html">Home</a>
-            <a href="details.html">Details</a>
+            <a href="index.html">Home</a>
+            <a class="active" href="details.html">Details</a>
             <a href="favorite.html">Favorites</a>
         </nav>
     </header>    
     <main>
-        <div id="featured-game-info-card">
-            <ul id="featured-game-info">
-                <li>Release Date: <span id="release"></span></li>
-                <li>Rating: <span id="rating"></span></li>
-                <li>Platforms: <span id="platform"></span></li>
-                <li>Description: <span id="description"></span></li>
-            </ul>
-        </div>
-        <img class="featured-game-banner" src="images/rivals.jpg" alt="Featured game banner">
-        <h2>Popular Games</h2>
-        <div class="game-grid">
-            <!-- Dynamically filled using RAWG API -->
-        </div>
+
     </main>
     <footer>
         <section id="footer-left">

@@ -1,0 +1,140 @@
+/* Main Styling */
+main {
+    padding: 25px 50px;
+}
+
+/* Featured Game Info Card */
+#featured-game-info-card {
+    width: 200px; 
+    height: auto;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#featured-game-info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#featured-game-info-card li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* Featured Game Banner */
+.featured-game-banner {
+    height: auto; /* Ensure the image scales properly */
+    object-fit: cover;
+    width: calc(100% - 200px); /* Image takes up the rest of the space to the right of the card */
+    border-radius: 8px;
+}
+
+/* h2 for Popular Games */
+h2 {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 2rem;
+    color: white;
+    font-family: var(--header-font);
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    padding: 10px;
+}
+
+/* Game Grid (using Flexbox with Row Direction) */
+.game-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Game Card */
+.game-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; 
+    width: 175px;
+    height: 350px;
+    background-color: var(--background-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Title */
+.game-card h3 {
+    font-family: var(--header-font);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    flex-grow: 0; /* Prevents the title from growing */
+    text-align: center;
+    margin-top: 0; /* Removes default margin, ensuring it’s at the top */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limits to 2 lines if needed */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Game Image */
+.game-card img {
+    width: 100%;
+    height: 120px; /* Fixed height for the image */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    position: relative; /* Keeps image in place */
+}
+
+/* Game Description */
+.game-card p {
+    color: black;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 10px; /* Adds spacing between description and image */
+}
+
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #featured-game-info-card {
+        width: 100%; /* Take full width on small screens */
+        margin-bottom: 20px;
+    }
+
+    .featured-game-banner {
+        width: 100%; /* Take full width on small screens */
+        margin-bottom: 20px;
+    }
+
+    .game-grid {
+        justify-content: center; /* Center the grid on small screens */
+        flex-direction: column; /* Stack the cards vertically on small screens */
+    }
+
+    .game-card {
+        width: 90%;
+    }
+}
