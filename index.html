@@ -3,9 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="The site is designed to serve as a hub for video game enthusiasts, providing detailed information about trending games. It allows users to explore new releases, discover game details, and track their favorite games.">
+    <title>GamingScope | Home</title>
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+    <link rel="manifest" href="../images/site.webmanifest">
+    <script src="scripts/home.js" defer></script>
 </head>
 <body>
-    
+    <header>
+        <img src="images/gamescope-logo.jpg" alt="GameScope Logo">
+        <h1>GameScope</h1>
+        <nav>
+            <a class="active" href="index.html">Home</a>
+            <a href="details.html">Details</a>
+            <a href="favorite.html">Favorites</a>
+        </nav>
+    </header>
+    <main>
+        <div id="featured-game-info">
+
+        </div>
+        <img class="featured-game-banner" src="" alt="Featured game banner">
+        <h2>Popular Games</h2>
+        <div class="game-grid">
+            <div class="game-card">
+                <h3>Game Title</h3>
+                <img src="placeholder" alt="game image">
+                <p>short description</p>
+            </div>
+            <div class="game-card">
+                <h3>Game Title</h3>
+                <img src="placeholder" alt="game image">
+                <p>short description</p>
+            </div>
+            <div class="game-card">
+                <h3>Game Title</h3>
+                <img src="placeholder" alt="game image">
+                <p>short description</p>
+            </div>
+            <div class="game-card">
+                <h3>Game Title</h3>
+                <img src="placeholder" alt="game image">
+                <p>short description</p>
+            </div>
+            <div class="game-card">
+                <h3>Game Title</h3>
+                <img src="placeholder" alt="game image">
+                <p>short description</p>
+            </div>
+            <div class="game-card">
+                <h3>Game Title</h3>
+                <img src="placeholder" alt="game image">
+                <p>short description</p>
+            </div>
+        </div>  
+    </main>
+    <footer>
+        <section id="footer-left">
+            <p>&copy; <span id="copy-right"></span> GameScope.</p>
+            <p>All rights reserved</p>
+            <p>Tristan Galloway</p>
+        </section>
+        <section id="footer-social">
+            <a href="https://www.instagram.com/" target="_blank"><img src="images/instagram.webp" alt="Instagram"></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.webp" alt="Facebook"></a>
+            <a href="https://www.x.com/" target="_blank"><img src="images/x.webp" alt="X"></a>
+        </section>
+        <section id="footer-right">
+            <a href="">Contact me</a>
+            <p>Last Modified: <span id="lastModified"></span></p>
+        </section>
+    </footer>    
 </body>
 </html>
