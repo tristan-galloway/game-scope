@@ -34,19 +34,28 @@
         </nav>
     </header>    
     <main>
-        <div id="featured-game-info-card">
-            <ul id="featured-game-info">
-                <li>Release Date: <span id="release"></span></li>
-                <li>Rating: <span id="rating"></span></li>
-                <li>Platforms: <span id="platform"></span></li>
-                <li>Description: <span id="description"></span></li>
+        <div id="featured-game">
+            <ul id="featured-game-info-card">
+                <li><span id="title">loading...</span></li>
+                <li>Release Date: <span id="release">loading...</span></li>
+                <li>Rating: <span id="rating">loading...</span></li>
+                <li>Platforms: <span id="platform">loading...</span></li>
+                <li>Description: <span id="description">loading...</span></li>
             </ul>
+            <div id="featured-game-banner-container">
+                <img id="featured-game-banner" src="" alt="loading...">
+            </div>            
         </div>
-        <img class="featured-game-banner" src="images/rivals.jpg" alt="Featured game banner">
         <h2>Popular Games</h2>
         <div class="game-grid">
             <!-- Dynamically filled using RAWG API -->
         </div>
+        
+        <!-- Pagination Controls -->
+        <div class="pagination">
+            <button id="prev-btn" class="pagination-btn" disabled>Previous</button>
+            <button id="next-btn" class="pagination-btn" disabled>Next</button>
+        </div>        
     </main>
     <footer>
         <section id="footer-left">

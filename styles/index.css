@@ -1,12 +1,24 @@
 /* Main Styling */
 main {
-    padding: 25px 50px;
+    max-width: 2000px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Featured Game Container */
+#featured-game {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
 }
 
 /* Featured Game Info Card */
 #featured-game-info-card {
-    width: 200px; 
-    height: auto;
+    width: 100%; /* Fixed width for the card */
+    height: 100%;
+    box-sizing: border-box; /* Ensures padding is included in the element's width */
     background-color: var(--primary-color);
     color: white;
     padding: 20px;
@@ -15,11 +27,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-#featured-game-info-card ul {
     list-style: none;
-    padding: 0;
     margin: 0;
 }
 
@@ -28,26 +36,65 @@ main {
     font-size: 1.1rem;
 }
 
+#title {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
 /* Featured Game Banner */
-.featured-game-banner {
-    height: auto; /* Ensure the image scales properly */
+#featured-game-banner-container {
+    position: relative;
+    width: 100%; /* Full width of the container */
+    padding-top: 56.25%; /* This is 9 / 16, to maintain the 16:9 aspect ratio */
+    overflow: hidden; /* Ensures the image does not overflow its container */
+}
+
+#featured-game-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    width: calc(100% - 200px); /* Image takes up the rest of the space to the right of the card */
     border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Show More / Show Less Button */
+.show-toggle-btn {
+    margin-top: 10px;
+    padding: 8px 16px; /* Adjust padding for consistency */
+    background-color: var(--secondary-color); /* Match the primary color */
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem; /* Adjust font size for consistency */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Hover Effect for the Show More / Show Less Button */
+.show-toggle-btn:hover {
+    background-color: var(--accent-color); /* Darken the button on hover */
+    color: white;
 }
 
 /* h2 for Popular Games */
 h2 {
     width: 100%;
+    box-sizing: border-box; /* Ensures padding is included in the element's width */
     text-align: center;
     margin-top: 40px;
+    margin-bottom: 20px; /* Optional: Add margin below the heading */
     font-size: 2rem;
     color: white;
     font-family: var(--header-font);
     border-radius: 8px;
     background-color: var(--primary-color);
     padding: 10px;
+    overflow-wrap: break-word; /* Handles long text gracefully */
 }
+
 
 /* Game Grid (using Flexbox with Row Direction) */
 .game-grid {
@@ -64,33 +111,26 @@ h2 {
 .game-card {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center; 
+    justify-content: flex-start; /* Ensures the title is at the top */
     width: 175px;
-    height: 350px;
+    height: 350px; /* Fixed height for uniformity */
     background-color: var(--background-color);
     border: 2px solid var(--primary-color);
     border-radius: 8px;
     padding: 15px;
+    text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    position: relative;
+    overflow: hidden; /* Ensures overflow is hidden */
+    transition: transform 0.3s ease-in-out; /* Smooth scaling transition */
 }
 
 /* Title */
 .game-card h3 {
     font-family: var(--header-font);
     color: var(--primary-color);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 10px;
-    flex-grow: 0; /* Prevents the title from growing */
-    text-align: center;
-    margin-top: 0; /* Removes default margin, ensuring it’s at the top */
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* Limits to 2 lines if needed */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    flex-grow: 0; /* Prevents title from growing, keeps it at the top */
 }
 
 /* Game Image */
@@ -100,17 +140,48 @@ h2 {
     border-radius: 8px;
     margin-bottom: 10px;
     object-fit: cover;
-    position: relative; /* Keeps image in place */
 }
 
-/* Game Description */
+/* Game Rating and Release Date */
 .game-card p {
     color: black;
-    font-size: 1rem;
-    text-align: center;
-    margin-top: 10px; /* Adds spacing between description and image */
+    font-size: 1em;
+    margin-top: 10px;
 }
 
+/* Hover Effect */
+.game-card:hover {
+    transform: scale(1.05); /* Slightly increases the size of the card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds a stronger shadow effect on hover */
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;  /* Center the buttons horizontally */
+    align-items: center;  /* Ensure the buttons are vertically centered if needed */
+    margin-top: 20px;
+    width: 100%;
+}
+
+.pagination-btn {
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 5px;  /* Space between the buttons */
+}
+
+.pagination-btn:hover {
+    background-color: var(--accent-color);
+    color: black;
+}
+
+.pagination-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
 
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
@@ -119,14 +190,18 @@ h2 {
         align-items: center;
     }
 
-    #featured-game-info-card {
-        width: 100%; /* Take full width on small screens */
-        margin-bottom: 20px;
+    #featured-game {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
     }
 
+    #featured-game-info-card,
     .featured-game-banner {
-        width: 100%; /* Take full width on small screens */
-        margin-bottom: 20px;
+        width: 100%; /* Full width for both elements */
+    }
+
+    #featured-game-banner {
+        max-height: none; /* Allow the image to adjust height */
     }
 
     .game-grid {

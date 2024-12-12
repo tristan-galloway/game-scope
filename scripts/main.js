@@ -21,3 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         nav.classList.toggle('responsive');
     });
 });
+
+getCurrentYear();
+getLastModified();

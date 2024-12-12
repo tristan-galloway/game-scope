@@ -36,7 +36,7 @@ header h1 {
     left: 50%;
     transform: translateX(-50%);
     font-family: var(--header-font);
-    font-size: 1.8rem;
+    font-size: 2em;
 }
 
 /* Navigation Bar */
