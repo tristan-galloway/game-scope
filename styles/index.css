@@ -1,10 +1,3 @@
-/* Main Styling */
-main {
-    max-width: 2000px;
-    margin: 20px auto;
-    padding: 20px;
-}
-
 /* Featured Game Container */
 #featured-game {
     display: flex;

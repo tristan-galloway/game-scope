@@ -1,0 +1,364 @@
+/* General styling for elements with rounded corners, box shadows, and padding */
+.card, .description-box, #game-banner, #search-dropdown, .details-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f4f4f4; /* Consistent background for cards */
+}
+
+.card, .description-box, #game-banner, .details-card {
+    padding: 20px;
+}
+
+#game-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-align: center;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: 65px 360px auto; /* Different row heights */
+    gap: 20px; /* Adds spacing between grid items */
+    padding-bottom: 20px;
+}
+
+/* Search container and dropdown */
+#game-search-container {
+    position: relative;
+    grid-column: 1 / 4; /* Span all three columns */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px auto;
+}
+
+#search-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid var(--primary-color);
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#search-dropdown .dropdown-item {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#search-dropdown .dropdown-item:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#search-dropdown .no-results {
+    padding: 10px 15px;
+    color: gray;
+    text-align: center;
+}
+
+/* Search bar */
+#game-search {
+    flex-grow: 1;
+    height: 50px;
+    padding: 0 15px;
+    font-size: 1rem;
+    border: 1px solid var(--primary-color);
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    border-radius: 8px 0 0 8px;
+}
+
+#game-search:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Search button */
+#search-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+    color: white;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-button img {
+    height: 30px;
+    width: 30px;
+}
+
+#search-button:hover {
+    background-color: var(--accent-color);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Banner and details card */
+#game-banner {
+    box-sizing: border-box;
+    grid-row: 2;
+    grid-column: 1;
+    object-fit: cover;
+    background-color: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 640px;
+    height: 360px;
+}
+
+.details-card {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+#details {
+    list-style-type: none;
+    padding: 0;
+}
+
+#details li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+#details span {
+    font-weight: bold;
+}
+
+/* Description box */
+.description-box {
+    grid-row: 2 / 4;
+    grid-column: 2 / 4;
+    background-color: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.description-box p {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+}
+
+.description-box a {
+    align-self: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.description-box a:hover {
+    text-decoration: underline;
+}
+
+/* Website link */
+#game-website-link {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    color: black;
+    border-radius: 8px;
+}
+
+#game-website-link:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Platform tiles */
+.platforms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.platform-tile {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.platform-tile p {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Rotating Gallery */
+.rotating-gallery {
+    margin-top: 20px;
+    justify-self: center;
+    height: 360px;
+    width: 640px;
+    overflow: hidden; /* Hide any overflow from the gallery */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Rotating Gallery Image */
+.rotating-gallery img {
+    width: 100%; /* Image will take up full width of the gallery */
+    height: 100%; /* Image will take up full height of the gallery */
+    border-radius: 8px;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for any transformations */
+}
+
+
+/* Left and Right Buttons */
+#left-button, #right-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    background-color: var(--primary-color); /* Set background to secondary color */
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#left-button img, #right-button img {
+    filter: invert(1); /* Invert image color to make it white */
+    width: 20px; /* Adjust size of arrow */
+    height: 20px;
+}
+
+#left-button:hover, #right-button:hover {
+    background-color: var(--accent-color); /* Accent color on hover */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+#left-button {
+    left: 10px;
+}
+
+#right-button {
+    right: 10px;
+}
+
+
+/* Media query for small screens (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Remove grid layout */
+    #grid {
+        display: flex;
+        flex-direction: column; /* Stack everything vertically */
+        gap: 20px; /* Add spacing between elements */
+    }
+
+    /* Adjust search bar and button to fit vertically as a single unit */
+    #game-search-container {
+        display: flex;
+        flex-direction: row; /* Keep the search bar and button side by side */
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    #game-search {
+        flex-grow: 1; /* Let the search bar take up the remaining space */
+        height: 50px; /* Consistent height */
+        padding: 0 15px;
+        font-size: 1rem;
+        border-radius: 8px 0 0 8px;
+        border: 1px solid var(--primary-color);
+        background-color: white;
+        color: black;
+        box-sizing: border-box;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    #search-button {
+        width: 50px; /* Fixed width for the button */
+        height: 50px; /* Match the height of the input */
+        font-size: 1rem;
+        color: white;
+        background-color: var(--primary-color);
+        border: 1px solid var(--primary-color);
+        border-left: none; /* Remove border overlap between input and button */
+        border-radius: 0 8px 8px 0; /* Rounded corners on the right */
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    #search-button img {
+        height: 60%; /* Adjust icon height relative to the button */
+        width: auto;
+    }
+
+    .platforms {
+        margin-top: 20px;
+    }
+
+    .platform-tile {
+        margin-bottom: 10px; /* Add space between tiles */
+    }
+
+    /* Ensure the description box and banner stack correctly */
+    .description-box {
+        grid-column: 1 / 3; /* Span across two columns */
+        padding: 15px;
+    }
+
+    #game-banner {
+        margin-bottom: 15px; /* Adjust margin for mobile view */
+    }
+
+    /* Adjust rotating gallery buttons for mobile */
+    .rotating-gallery button {
+        width: 50px;
+        height: 50px;
+    }
+
+    #game-banner, .rotating-gallery {
+        width: 100%;
+        height: auto;
+    }
+}

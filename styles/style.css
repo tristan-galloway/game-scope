@@ -37,6 +37,7 @@ header {
 
 header img {
     height: 50px;
+    width: 50px;
     margin-right: 10px;
 }
 
@@ -96,6 +97,16 @@ nav.responsive a {
     text-align: left;
 }
 
+/* Main Styling */
+main {
+    width: 100%; /* Ensures full width */
+    max-width: 2000px;
+    margin: 20px auto;
+    padding: 20px;
+    min-height: 1000px; /* Minimum height for main */
+    box-sizing: border-box;
+}
+
 /* Footer Styling */
 footer {
     display: flex;
@@ -105,30 +116,48 @@ footer {
     color: #ffffff;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
     flex-wrap: wrap;
+    width: 100%;
+    min-height: 150px; /* Minimum height for footer */
+    box-sizing: border-box;
 }
 
-#footer-left,
+/* Left Footer Section */
+#footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    width: 30%; /* Explicit width */
+}
+
+#footer-left p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Right Footer Section */
 #footer-right {
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-
-#footer-left {
-    align-items: flex-start;
-}
-
-#footer-right {
     align-items: flex-end;
+    width: 30%; /* Explicit width */
+    text-align: right;
 }
 
+#footer-right p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Social Media Section */
 #footer-social {
     display: flex;
     justify-content: center;
     gap: 30px;
     align-items: center;
     flex-grow: 1;
-    margin: 10px;
+    width: 30%; /* Explicit width */
 }
 
 #footer-social a {
@@ -136,8 +165,8 @@ footer {
 }
 
 #footer-social img {
-    width: 70px;
-    height: auto;
+    width: 40px; /* Explicit size for uniformity */
+    height: 40px; /* Explicit size for uniformity */
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -145,6 +174,7 @@ footer {
     transform: scale(1.2);
     opacity: 0.8;
 }
+
 
 /* Media Query */
 @media (max-width: 768px) {
@@ -169,6 +199,7 @@ footer {
     #footer-right {
         align-items: center;
         text-align: center;
+        width: 100%; /* Full width on small screens */
     }
 
     #footer-social {
