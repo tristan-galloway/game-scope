@@ -105,41 +105,42 @@ h2 {
     gap: 20px;
     width: 100%;
     margin: 0 auto;
+    padding-top: 20px;
 }
 
 /* Game Card */
 .game-card {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Ensures the title is at the top */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center;
     width: 175px;
     height: 350px; /* Fixed height for uniformity */
     background-color: var(--background-color);
     border: 2px solid var(--primary-color);
     border-radius: 8px;
-    padding: 15px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Ensures overflow is hidden */
+    overflow: hidden;
     transition: transform 0.3s ease-in-out; /* Smooth scaling transition */
+}
+
+/* Game Image */
+.game-card img {
+    width: 100%;
+    height: calc(100% / 2); /* Make the image take up the top third of the card */
+    border-radius: 8px 8px 0 0; /* Rounded corners for the top */
+    margin-bottom: 10px;
+    object-fit: cover;
 }
 
 /* Title */
 .game-card h3 {
     font-family: var(--header-font);
     color: var(--primary-color);
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    flex-grow: 0; /* Prevents title from growing, keeps it at the top */
-}
-
-/* Game Image */
-.game-card img {
-    width: 100%;
-    height: 120px; /* Fixed height for the image */
-    border-radius: 8px;
-    margin-bottom: 10px;
-    object-fit: cover;
+    font-size: 1.1rem; /* Adjust size for better proportions */
+    margin: 10px 0; /* Space around the title */
+    flex-grow: 0; /* Prevents title from growing */
 }
 
 /* Game Rating and Release Date */
@@ -147,6 +148,7 @@ h2 {
     color: black;
     font-size: 1em;
     margin-top: 10px;
+    padding: 0 10px; /* 0 padding on top and bottom, 20px on left and right */
 }
 
 /* Hover Effect */

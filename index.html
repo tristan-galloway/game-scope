@@ -47,16 +47,18 @@
             </div>            
         </div>
         <h2>Popular Games</h2>
+        <div class="pagination top-pagination">
+            <button id="prev-btn-top" class="pagination-btn" disabled>Previous Page</button>
+            <button id="next-btn-top" class="pagination-btn" disabled>Next Page</button>
+        </div>
         <div class="game-grid">
             <!-- Dynamically filled using RAWG API -->
         </div>
-        
-        <!-- Pagination Controls -->
-        <div class="pagination">
-            <button id="prev-btn" class="pagination-btn" disabled>Previous</button>
-            <button id="next-btn" class="pagination-btn" disabled>Next</button>
-        </div>        
-    </main>
+        <div class="pagination bottom-pagination">
+            <button id="prev-btn-bottom" class="pagination-btn" disabled>Previous Page</button>
+            <button id="next-btn-bottom" class="pagination-btn" disabled>Next Page</button>
+        </div>
+    </main>    
     <footer>
         <section id="footer-left">
             <p>&copy; <span id="copy-right"></span> GameScope.</p>
