@@ -82,7 +82,7 @@ function gameListFetch(url) {
  * Scroll to the top of the main container.
  */
 function scrollToTop() {
-    document.querySelector('main').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelector('#popular-games').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 /**
