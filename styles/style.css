@@ -8,8 +8,19 @@
     --body-font: "Noto Sans", sans-serif;
 }
 
+/* Global Styles */
 * {
-    font-family: "Noto Sans", sans-serif;
+    font-family: var(--body-font);
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
 }
 
 /* Header Styling */
@@ -24,13 +35,11 @@ header {
     position: relative; /* To position the centered h1 correctly */
 }
 
-/* Logo */
 header img {
     height: 50px;
     margin-right: 10px;
 }
 
-/* Center GameScope Title */
 header h1 {
     position: absolute;
     left: 50%;
@@ -46,19 +55,12 @@ nav {
 }
 
 nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
     padding: 8px 12px;
     border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-nav a:hover {
-    background-color: var(--secondary-color);
-    color: black;
-}
-
+nav a:hover,
 nav a.active {
     background-color: var(--secondary-color);
     color: black;
@@ -105,15 +107,21 @@ footer {
     flex-wrap: wrap;
 }
 
-/* Footer Left */
-#footer-left {
+#footer-left,
+#footer-right {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 10px;
 }
 
-/* Footer Social */
+#footer-left {
+    align-items: flex-start;
+}
+
+#footer-right {
+    align-items: flex-end;
+}
+
 #footer-social {
     display: flex;
     justify-content: center;
@@ -128,54 +136,28 @@ footer {
 }
 
 #footer-social img {
-    width: 70px; /* Size of social icons */
+    width: 70px;
     height: auto;
-}
-
-/* Hover Animation */
-#footer-social img:hover {
-    transform: scale(1.2);  /* Slightly increase size */
-    opacity: 0.8;  /* Add a little transparency */
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Footer Right */
-#footer-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
-}
-
-/* Footer Links */
-#footer-right a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-#footer-right a:hover {
-    color: var(--secondary-color);
+#footer-social img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
 }
 
 /* Media Query */
 @media (max-width: 768px) {
     nav {
-        display: none; /* Hide the navigation */
+        display: none;
     }
 
     nav.responsive {
-        display: flex; /* Show dropdown when active */
+        display: flex;
     }
 
     .menu-icon {
         display: flex;
-    }
-
-    header h1 {
-        left: 50%;
-        transform: translateX(-50%);
     }
 
     footer {

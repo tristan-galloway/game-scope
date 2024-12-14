@@ -16,7 +16,7 @@ main {
 
 /* Featured Game Info Card */
 #featured-game-info-card {
-    width: 100%; /* Fixed width for the card */
+    width: 100%;
     height: 100%;
     box-sizing: border-box; /* Ensures padding is included in the element's width */
     background-color: var(--primary-color);
@@ -28,7 +28,6 @@ main {
     flex-direction: column;
     justify-content: center;
     list-style: none;
-    margin: 0;
 }
 
 #featured-game-info-card li {
@@ -44,9 +43,9 @@ main {
 /* Featured Game Banner */
 #featured-game-banner-container {
     position: relative;
-    width: 100%; /* Full width of the container */
-    padding-top: 56.25%; /* This is 9 / 16, to maintain the 16:9 aspect ratio */
-    overflow: hidden; /* Ensures the image does not overflow its container */
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
 }
 
 #featured-game-banner {
@@ -63,40 +62,37 @@ main {
 /* Show More / Show Less Button */
 .show-toggle-btn {
     margin-top: 10px;
-    padding: 8px 16px; /* Adjust padding for consistency */
-    background-color: var(--secondary-color); /* Match the primary color */
+    padding: 8px 16px;
+    background-color: var(--secondary-color);
     color: black;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 1rem; /* Adjust font size for consistency */
-    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out;
 }
 
-/* Hover Effect for the Show More / Show Less Button */
 .show-toggle-btn:hover {
-    background-color: var(--accent-color); /* Darken the button on hover */
+    background-color: var(--accent-color);
     color: white;
 }
 
 /* h2 for Popular Games */
-h2 {
+#popular-games {
     width: 100%;
     box-sizing: border-box; /* Ensures padding is included in the element's width */
     text-align: center;
-    margin-top: 40px;
-    margin-bottom: 20px; /* Optional: Add margin below the heading */
+    margin: 40px 0 20px;
     font-size: 2rem;
     color: white;
     font-family: var(--header-font);
     border-radius: 8px;
     background-color: var(--primary-color);
     padding: 10px;
-    overflow-wrap: break-word; /* Handles long text gracefully */
+    overflow-wrap: break-word;
 }
 
-
-/* Game Grid (using Flexbox with Row Direction) */
+/* Game Grid */
 .game-grid {
     display: flex;
     flex-wrap: wrap;
@@ -112,72 +108,68 @@ h2 {
 .game-card {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align items to the top */
     align-items: center;
     width: 175px;
-    height: 350px; /* Fixed height for uniformity */
+    height: 350px;
     background-color: var(--background-color);
     border: 2px solid var(--primary-color);
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform 0.3s ease-in-out; /* Smooth scaling transition */
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Game Image */
 .game-card img {
     width: 100%;
-    height: calc(100% / 2); /* Make the image take up the top third of the card */
-    border-radius: 8px 8px 0 0; /* Rounded corners for the top */
+    height: 50%;
+    border-radius: 8px 8px 0 0;
     margin-bottom: 10px;
     object-fit: cover;
 }
 
-/* Title */
 .game-card h3 {
     font-family: var(--header-font);
     color: var(--primary-color);
-    font-size: 1.1rem; /* Adjust size for better proportions */
-    margin: 10px 0; /* Space around the title */
-    flex-grow: 0; /* Prevents title from growing */
+    font-size: 1.1rem;
+    margin: 10px 0;
 }
 
-/* Game Rating and Release Date */
 .game-card p {
     color: black;
     font-size: 1em;
     margin-top: 10px;
-    padding: 0 10px; /* 0 padding on top and bottom, 20px on left and right */
+    padding: 0 10px;
 }
 
-/* Hover Effect */
 .game-card:hover {
-    transform: scale(1.05); /* Slightly increases the size of the card */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds a stronger shadow effect on hover */
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Pagination */
 .pagination {
     display: flex;
-    justify-content: center;  /* Center the buttons horizontally */
-    align-items: center;  /* Ensure the buttons are vertically centered if needed */
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
     width: 100%;
 }
 
 .pagination-btn {
     padding: 10px 20px;
+    font-weight: bold;
     background-color: var(--secondary-color);
     color: black;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    margin: 0 5px;  /* Space between the buttons */
+    margin: 0 5px;
 }
 
 .pagination-btn:hover {
     background-color: var(--accent-color);
-    color: black;
+    color: #ffff;
 }
 
 .pagination-btn:disabled {
@@ -193,25 +185,21 @@ h2 {
     }
 
     #featured-game {
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column;
         align-items: center;
     }
 
     #featured-game-info-card,
     .featured-game-banner {
-        width: 100%; /* Full width for both elements */
-    }
-
-    #featured-game-banner {
-        max-height: none; /* Allow the image to adjust height */
+        width: 100%;
     }
 
     .game-grid {
-        justify-content: center; /* Center the grid on small screens */
-        flex-direction: column; /* Stack the cards vertically on small screens */
+        flex-direction: column;
     }
 
     .game-card {
         width: 90%;
+        min-height: 500px;
     }
 }
