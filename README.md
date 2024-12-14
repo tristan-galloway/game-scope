@@ -5,9 +5,9 @@ My idea is to have a webpage that will display info about video games. I chose t
 
 ## Site Layout
 Pages
-- [Homepage]: Display trending games.
-- [Game Details]: Information about a specific game.
-- [Favorites]: Track your favorite games.
+- [Homepage](https://tristan-galloway.github.io/game-scope/): Display trending games.
+- [Game Details](https://tristan-galloway.github.io/game-scope/details.html): Information about a specific game.
+- [Favorites](https://tristan-galloway.github.io/game-scope/favorite.html): Track your favorite games.
 
 ## Important Links
 [RAWG API](https://rawg.io/apidocs)
