@@ -1,0 +1,172 @@
+/* Responsive Grid for Favorite Games */
+#favorites-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Favorite Game Card Styles */
+.favorite-game-container {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative; /* Allows absolute positioning inside */
+}
+
+.favorite-game-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.favorite-game-container img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 50px;
+}
+
+.favorite-game-container h2 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.game-site {
+    background-color: var(--secondary-color);
+    color: black;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-top: 15px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Position the "Learn More" button */
+    bottom: 20px; /* Space from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center the button horizontally */
+}
+
+.game-site:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.favorite-button {
+    background-color: rgb(206, 0, 0);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Position the "Remove" button */
+    bottom: 20px; /* Space from the bottom */
+    right: 20px; /* Space from the right */
+}
+
+.favorite-button:hover {
+    background-color: rgb(158, 0, 0);
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-btn {
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #f44336;
+    color: white;
+    border: none;
+}
+
+.modal-btn:hover {
+    background-color: #d32f2f;
+}
+
+@media (max-width: 768px) {
+    /* Ensure cards stack in a single column on small screens */
+    #favorites-main {
+        grid-template-columns: 1fr;
+    }
+
+    .favorite-game-container {
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    /* Stack the buttons vertically beneath the image */
+    .game-site, .favorite-button {
+        position: relative; /* Reset position to default */
+        bottom: auto; /* Reset the absolute positioning */
+        right: auto; /* Reset the absolute positioning */
+        display: block; /* Stack buttons vertically */
+        box-sizing: border-box;
+        width: 100%; /* Make buttons take up the full width */
+        margin: 15px 0; /* Add spacing between buttons */
+    }
+}
+
+@media (min-width: 950px) {
+    /* Use grid layout for larger screens */
+    #favorites-main {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 3 cards per row, with responsive widths */
+        grid-gap: 20px; /* Add space between the cards */
+        padding: 20px;
+    }
+
+    .favorite-game-container {
+        margin: 0; /* Remove margin for grid layout */
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Adjust button positioning on larger screens */
+    .game-site, .favorite-button {
+        position: relative;
+        display: block; /* Ensure buttons are centered beneath the image */
+        width: auto; /* Reset to auto width for larger screens */
+        margin-top: 10px;
+    }
+
+    .game-site {
+        left: unset; /* Reset positioning */
+        transform: unset; /* Reset centering transformation */
+        margin: 15px 0; /* Adjust spacing for "Learn More" button */
+    }
+
+    .favorite-button {
+        right: unset; /* Reset positioning */
+        bottom: unset; /* Reset positioning */
+        position: relative; /* Adjust to normal flow */
+        width: 100%;
+        margin-top: 10px;
+    }
+}

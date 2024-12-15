@@ -53,6 +53,8 @@ header h1 {
 nav {
     display: flex;
     gap: 15px;
+    position: relative; /* Ensure it's inside the flow */
+    z-index: 100; /* Ensure it's on top of other elements */
 }
 
 nav a {
