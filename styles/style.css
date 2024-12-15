@@ -127,6 +127,7 @@ footer {
     flex-direction: column;
     gap: 10px;
     align-items: flex-start;
+    align-self: center;
     width: 30%; /* Explicit width */
 }
 
@@ -141,6 +142,7 @@ footer {
     flex-direction: column;
     gap: 10px;
     align-items: flex-end;
+    align-self: center;
     width: 30%; /* Explicit width */
     text-align: right;
 }

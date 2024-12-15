@@ -5,16 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The site is designed to serve as a hub for video game enthusiasts, providing detailed information about trending games. It allows users to explore new releases, discover game details, and track their favorite games.">
     <title>GamingScope | Home</title>
+
+    <!-- Preload critical stylesheets -->
+    <link rel="preload" href="styles/normalize.css" as="style">
+    <link rel="preload" href="styles/style.css" as="style">
+    <link rel="preload" href="styles/index.css" as="style">
+
+    <!-- Load other stylesheets with media="print" to defer loading until after page render -->
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/style.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="styles/index.css" media="print" onload="this.media='all'">
+
+    <!-- Preconnect to fonts and load them asynchronously -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Play:wght@400;700&display=swap" as="style">
+
+    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="manifest" href="images/site.webmanifest">
+
+    <!-- Asynchronous JavaScript files -->
     <script src="scripts/main.js" defer></script>
     <script src="scripts/home.js" defer></script>
 </head>
@@ -66,14 +79,14 @@
             <p>Tristan Galloway</p>
         </section>
         <section id="footer-social">
-            <a href="https://www.instagram.com/" target="_blank"><img src="images/instagram.svg" alt="Instagram" loading="lazy"></a>
-            <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.svg" alt="Facebook" loading="lazy"></a>
-            <a href="https://www.x.com/" target="_blank"><img src="images/twitter.svg" alt="Twitter" loading="lazy"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="images/instagram.svg" alt="Instagram"></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.svg" alt="Facebook"></a>
+            <a href="https://www.x.com/" target="_blank"><img src="images/twitter.svg" alt="Twitter"></a>
         </section>
         <section id="footer-right">
-            <a href="">Contact me</a>
+            <a href="https://www.linkedin.com/in/tristan-a-galloway/">Contact me</a>
             <p>Last Modified: <span id="lastModified"></span></p>
         </section>
-    </footer>    
+    </footer>     
 </body>
 </html>

@@ -57,10 +57,26 @@ function truncateItems(items, limit) {
 /**
  * Display game details in the HTML.
  */
-function displayGameDetails(gameData) {
+async function displayGameDetails(gameData) {
     // Fill in the game title
     const gameTitleElement = document.getElementById("game-title");
     gameTitleElement.textContent = gameData.name || "Unknown Title"; // Use "Unknown Title" if no title is provided
+
+    // Add a Favorite button and its functionality
+    const favoriteButton = document.getElementById("favorite-button");
+
+    // Update the button text based on local storage
+    const favorites = JSON.parse(localStorage.getItem("favoriteGames")) || [];
+    if (favorites.includes(gameData.id)) {
+        favoriteButton.textContent = "Unfavorite";
+    } else {
+        favoriteButton.textContent = "Favorite";
+    }
+
+    // Add click event listener to handle favorite toggling
+    favoriteButton.onclick = () => {
+        toggleFavorite(gameData.id, favoriteButton);
+    };
 
     // Fill in the banner image
     const gameBanner = document.getElementById("game-banner");
@@ -111,11 +127,79 @@ function displayGameDetails(gameData) {
         platformsContainer.innerHTML = "<p>No platforms available</p>";
     }
 
-    // Rotating gallery (you can add actual images if available)
-    const rotatingGallery = document.querySelector(".rotating-gallery img");
-    rotatingGallery.src = gameData.background_image || "placeholder";
+    // Show trailer in the rotating gallery section
+    await displayTrailer(gameData.id);
 }
 
+function toggleFavorite(gameId, button) {
+    // Retrieve the current favorites from local storage
+    let favorites = JSON.parse(localStorage.getItem("favoriteGames")) || [];
+
+    // Check if the game is already in favorites
+    if (favorites.includes(gameId)) {
+        // Remove from favorites
+        favorites = favorites.filter(id => id !== gameId);
+        button.textContent = "Favorite";
+    } else {
+        // Add to favorites
+        favorites.push(gameId);
+        button.textContent = "Unfavorite";
+    }
+
+    // Save updated favorites back to local storage
+    localStorage.setItem("favoriteGames", JSON.stringify(favorites));
+}
+
+/**
+ * Fetch and display the trailer for the game.
+ */
+async function displayTrailer(gameId) {
+    const trailerUrl = `https://api.rawg.io/api/games/${gameId}/movies?key=${key}`;
+
+    try {
+        const response = await fetch(trailerUrl);
+        if (!response.ok) throw new Error("Failed to fetch trailer");
+        const data = await response.json();
+
+        const galleryContainer = document.querySelector(".rotating-gallery");
+        galleryContainer.innerHTML = ""; // Clear any existing content
+
+        if (data.results && data.results.length > 0) {
+            let currentTrailerIndex = 0;
+
+            // Create video element for the first trailer
+            const videoElement = document.createElement("video");
+            videoElement.src = data.results[currentTrailerIndex].data.max; // Trailer URL
+            videoElement.controls = true; // Add media controllers
+            galleryContainer.appendChild(videoElement);
+
+            // Add Back and Forward buttons
+            const backButton = document.createElement("button");
+            backButton.id = "left-button";
+            backButton.innerHTML = `<img src="images/left_arrow_icon.svg" alt="Back">`;
+            backButton.onclick = () => {
+                currentTrailerIndex = (currentTrailerIndex - 1 + data.results.length) % data.results.length;
+                videoElement.src = data.results[currentTrailerIndex].data.max;
+            };
+
+            const forwardButton = document.createElement("button");
+            forwardButton.id = "right-button";
+            forwardButton.innerHTML = `<img src="images/right_arrow_icon.svg" alt="Forward">`;
+            forwardButton.onclick = () => {
+                currentTrailerIndex = (currentTrailerIndex + 1) % data.results.length;
+                videoElement.src = data.results[currentTrailerIndex].data.max;
+            };
+
+            galleryContainer.appendChild(backButton);
+            galleryContainer.appendChild(forwardButton);
+        } else {
+            galleryContainer.innerHTML = "<p>No trailers available</p>";
+        }
+    } catch (error) {
+        console.error("Error fetching trailers:", error);
+        document.querySelector(".rotating-gallery").innerHTML = "<p>Unable to load trailers</p>";
+    }
+}
 
 /**
  * Fetch a random game and display its details.

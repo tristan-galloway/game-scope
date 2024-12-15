@@ -16,6 +16,41 @@
     text-align: center;
 }
 
+.favorite-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: var(--primary-color); /* Match the primary color used */
+    border: none;
+    border-radius: 8px; /* Rounded corners to match other elements */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    display: flex; /* Center-align icon and text */
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between icon and text */
+    margin: 0 auto;
+}
+
+.favorite-button:hover {
+    background-color: var(--accent-color); /* Accent color on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow on hover */
+}
+
+.favorite-button img {
+    height: 20px;
+    width: 20px;
+    filter: invert(1); /* Invert icon color to match the white text */
+}
+
+.favorite-button:active {
+    transform: translateY(2px); /* Slight "press" effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
 #grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
@@ -220,67 +255,70 @@
     margin: 0;
 }
 
-/* Rotating Gallery */
+/* Updated Rotating Gallery */
 .rotating-gallery {
-    margin-top: 20px;
-    justify-self: center;
-    height: 360px;
-    width: 640px;
-    overflow: hidden; /* Hide any overflow from the gallery */
+    width: 640px; /* Fixed width */
+    height: 360px; /* Fixed height */
+    background-color: #000; /* Black background for contrast */
+    color: white;
+    border-radius: 8px; /* Match rounded corners with theme */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Consistent box shadow */
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: relative; /* For button positioning */
+    overflow: hidden; /* Hide anything outside the bounds */
+    margin: 10px auto; /* Center align and add spacing */
 }
 
-/* Rotating Gallery Image */
-.rotating-gallery img {
-    width: 100%; /* Image will take up full width of the gallery */
-    height: 100%; /* Image will take up full height of the gallery */
-    border-radius: 8px;
-    object-fit: cover; /* Ensures the image covers the container without distortion */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for any transformations */
+/* Video inside the Rotating Gallery */
+.rotating-gallery video {
+    width: 100%; /* Fill the width of the container */
+    height: 100%; /* Fill the height of the container */
+    object-fit: cover; /* Ensure video scales properly without distortion */
+    border-radius: 8px; /* Match container's rounded corners */
 }
-
 
 /* Left and Right Buttons */
 #left-button, #right-button {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%); /* Center vertically */
-    background-color: var(--primary-color); /* Set background to secondary color */
+    top: 50%; /* Vertically center */
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color); /* Match theme */
     border: none;
-    border-radius: 50%;
+    border-radius: 50%; /* Circular buttons */
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    padding: 10px;
-    transition: background-color 0.3s, box-shadow 0.3s;
+    z-index: 10; /* Ensure buttons are above the video */
+    opacity: 0.8; /* Slight transparency for visibility */
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
 }
 
 #left-button img, #right-button img {
-    filter: invert(1); /* Invert image color to make it white */
-    width: 20px; /* Adjust size of arrow */
-    height: 20px;
+    filter: invert(1); /* White arrow icons */
+    width: 16px; /* Adjust size */
+    height: 16px;
 }
 
 #left-button:hover, #right-button:hover {
-    background-color: var(--accent-color); /* Accent color on hover */
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--accent-color); /* Accent on hover */
+    transform: scale(1.1); /* Slight zoom effect */
 }
 
 #left-button {
-    left: 10px;
+    left: 10px; /* Position to the left */
 }
 
 #right-button {
-    right: 10px;
+    right: 10px; /* Position to the right */
 }
 
-
 /* Media query for small screens (max-width: 768px) */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     /* Remove grid layout */
     #grid {
         display: flex;
@@ -359,6 +397,7 @@
 
     #game-banner, .rotating-gallery {
         width: 100%;
+        min-height: 360px;
         height: auto;
     }
 }
