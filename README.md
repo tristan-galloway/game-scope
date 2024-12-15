@@ -15,5 +15,3 @@ Pages
 
 ## Video Tutorial
 [GameScope Walkthrough](https://youtu.be/6qtlEbeDdsw)
-
-`<iframe width="640" height="360" src="https://www.youtube.com/embed/6qtlEbeDdsw" title="GameScope Walk Through" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
