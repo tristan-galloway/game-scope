@@ -10,10 +10,10 @@ Pages
 - [Favorites](https://tristan-galloway.github.io/game-scope/favorite.html): Track your favorite games.
 
 ## Important Links
-[RAWG API](https://rawg.io/apidocs)
-[Icon pack](https://www.iconfinder.com/search?q=&family=accent-duo-tone-icons)
+- [RAWG API](https://rawg.io/apidocs)
+- [Icon pack](https://www.iconfinder.com/search?q=&family=accent-duo-tone-icons)
 
 ## Video Tutorial
 [GameScope Walkthrough](https://youtu.be/6qtlEbeDdsw)
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/6qtlEbeDdsw" title="GameScope Walk Through" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+`<iframe width="640" height="360" src="https://www.youtube.com/embed/6qtlEbeDdsw" title="GameScope Walk Through" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
